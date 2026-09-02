@@ -9,8 +9,10 @@
     "dev": "node --watch server/index.js"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "dependencies": {
-    "better-sqlite3": "^11.9.1",
     "cheerio": "^1.0.0",
     "express": "^4.21.2"
   }
