@@ -25,7 +25,9 @@ de cada producto según los materiales que usa.
 
 ## Requisitos
 
-- Node.js 18 o superior (usa `fetch` nativo).
+- Node.js 22.5 o superior (usa `fetch` y el módulo `node:sqlite`, ambos nativos).
+  No hace falta compilar nada ni instalar Python/Visual Studio Build Tools:
+  todas las dependencias son JavaScript puro.
 
 ## Instalación y uso
 

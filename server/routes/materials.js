@@ -115,6 +115,18 @@ router.put('/:id', (req, res) => {
   const merged = { ...existing, ...data };
   merged.unit_value = computeUnitValue(merged.purchase_cost, merged.purchase_quantity);
 
+  const params = {
+    id: merged.id,
+    name: merged.name,
+    unit: merged.unit,
+    purchase_cost: merged.purchase_cost,
+    purchase_quantity: merged.purchase_quantity,
+    unit_value: merged.unit_value,
+    supplier_url: merged.supplier_url,
+    supplier_price_selector: merged.supplier_price_selector,
+    supplier_quantity_selector: merged.supplier_quantity_selector,
+  };
+
   try {
     db.prepare(
       `UPDATE materials SET
@@ -125,7 +137,7 @@ router.put('/:id', (req, res) => {
         supplier_quantity_selector = @supplier_quantity_selector,
         updated_at = datetime('now')
        WHERE id = @id`
-    ).run(merged);
+    ).run(params);
     const updated = db.prepare('SELECT * FROM materials WHERE id = ?').get(req.params.id);
     res.json(updated);
   } catch (err) {
