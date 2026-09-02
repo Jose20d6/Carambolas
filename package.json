@@ -1,0 +1,19 @@
+{
+  "name": "carambolas",
+  "version": "1.0.0",
+  "description": "Gestor de materiales de costura y calculadora de costos de productos",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2"
+  }
+}
